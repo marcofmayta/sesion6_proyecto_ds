@@ -54,7 +54,7 @@ jobs:
             - name: Subir reporte como artefacto
               uses: actions/upload-artifact@v4
               with:
-                name: reporte-ejercucion-${{ github.run_number }}
+                name: modelo-y-reporte-${{ github.run_number }}
                 path: outputs/
                 retention-days: 30
 
