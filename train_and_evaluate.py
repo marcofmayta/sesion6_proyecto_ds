@@ -3,6 +3,7 @@ import json
 from datetime import datetime
 from sklearn.model_selection import train_test_split
 from src.modelo import cargar_datos, entrenar_modelo, evaluar_modelo
+import pickle
 
 os.makedirs("outputs", exist_ok=True)
 
@@ -47,3 +48,12 @@ metricas_json = {
 
 with open(metricas_json_path, "w", encoding="utf-8") as f:
     json.dump(metricas_json, f, indent=2)
+
+modelo_path = "outputs/modelo.pkl"
+with open(modelo_path, "wb") as f:
+    pickle.dump(modelo, f)
+
+print(f"Modelo guardado en: {modelo_path}")
+print(f"Reporte guardado en: {reporte_path}")
+print(f" Métricas guardadas en: {metricas_json_path}")
+print("\n¡Entrenamiento completado exitosamente!\nFIN DEL PROGRAMA.")
