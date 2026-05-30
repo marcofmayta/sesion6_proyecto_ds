@@ -1,6 +1,5 @@
 import os
 import json
-import pickle
 from datetime import datetime
 from sklearn.model_selection import train_test_split
 from src.modelo import cargar_datos, entrenar_modelo, evaluar_modelo
@@ -48,4 +47,3 @@ metricas_json = {
 
 with open(metricas_json_path, "w", encoding="utf-8") as f:
     json.dump(metricas_json, f, indent=2)
-
